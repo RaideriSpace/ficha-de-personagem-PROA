@@ -1,0 +1,230 @@
+/* =========================
+   RESET BÁSICO
+========================= */
+
+/*
+Remove margens automáticas
+que os navegadores adicionam
+*/
+* {
+	margin: 0;
+	padding: 0;
+
+	/*
+    Faz padding e borda
+    não aumentarem o tamanho
+    total do elemento
+    */
+	box-sizing: border-box;
+}
+
+/* =========================
+   VARIÁVEIS
+========================= */
+
+/*
+Variáveis CSS ajudam a reutilizar
+cores e facilitar manutenção
+*/
+:root {
+	--cor-principal: #ff9900;
+	--cor-texto: #333;
+	--cor-secundaria: #555;
+	--cor-fundo-card: rgba(255, 255, 255, 0.92);
+	--cor-habilidade: #f4f4f4;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+	/* Fonte principal da página */
+	font-family: Arial, sans-serif;
+
+	/* Imagem de fundo */
+	background-image: url("https://www.wallpaperalchemy.com/storage/wallpapers/2888/frieren-anime-wallpaper-blue-flower-field.jpg");
+
+	/*
+    Faz a imagem cobrir
+    toda a tela
+    */
+	background-size: cover;
+
+	/* Centraliza a imagem */
+	background-position: center;
+
+	/*
+    Impede repetição da imagem
+    */
+	background-repeat: no-repeat;
+
+	/* Espaçamento interno */
+	padding: 20px;
+
+	/*
+    Usa Flexbox para centralizar
+    o conteúdo
+    */
+	display: flex;
+
+	justify-content: center;
+	align-items: center;
+
+	/*
+    Altura mínima da tela inteira
+    */
+	min-height: 100vh;
+}
+
+/* =========================
+   CARD PRINCIPAL
+========================= */
+
+.ficha-container {
+	background-color: var(--cor-fundo-card);
+
+	width: 100%;
+	max-width: 600px;
+
+	padding: 30px;
+
+	border-radius: 16px;
+
+	/*
+    Sombra do card
+    eixo-x | eixo-y | blur | cor
+    */
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+	text-align: center;
+
+	/*
+    Efeito suave ao passar o mouse
+    */
+	transition: transform 0.3s ease;
+}
+
+/* Pequena animação */
+.ficha-container:hover {
+	transform: scale(1.01);
+}
+
+/* =========================
+   FOTO
+========================= */
+
+.personagem-foto {
+	width: 160px;
+	height: 160px;
+
+	/*
+    Deixa a imagem redonda
+    */
+	border-radius: 50%;
+
+	/*
+    Recorta a imagem
+    sem deformar
+    */
+	object-fit: cover;
+
+	border: 4px solid var(--cor-principal);
+
+	margin-bottom: 16px;
+}
+
+/* =========================
+   TÍTULOS
+========================= */
+
+.personagem-nome {
+	color: var(--cor-principal);
+
+	font-size: 2.5rem;
+
+	margin-bottom: 8px;
+}
+
+.personagem-titulo {
+	color: var(--cor-secundaria);
+
+	font-size: 1.2rem;
+
+	font-style: italic;
+
+	margin-bottom: 24px;
+}
+
+/* =========================
+   BIOGRAFIA
+========================= */
+
+.ficha-bio h3,
+.ficha-habilidades h3 {
+	color: var(--cor-texto);
+
+	margin-bottom: 12px;
+}
+
+.ficha-bio p {
+	line-height: 1.7;
+
+	color: var(--cor-texto);
+
+	margin-bottom: 24px;
+}
+
+/* =========================
+   LISTA DE HABILIDADES
+========================= */
+
+.ficha-habilidades ul {
+	list-style: none;
+}
+
+/* Cada habilidade */
+.ficha-habilidades li {
+	background-color: var(--cor-habilidade);
+
+	border-radius: 8px;
+
+	padding: 12px;
+
+	margin-bottom: 10px;
+
+	border: 1px solid #ddd;
+
+	transition: 0.3s;
+}
+
+/* Hover nas habilidades */
+.ficha-habilidades li:hover {
+	background-color: var(--cor-principal);
+
+	color: white;
+
+	transform: translateY(-2px);
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+/*
+Aplica estilos para telas menores
+*/
+@media (max-width: 600px) {
+	.ficha-container {
+		padding: 20px;
+	}
+
+	.personagem-nome {
+		font-size: 2rem;
+	}
+
+	.personagem-foto {
+		width: 130px;
+		height: 130px;
+	}
+}
